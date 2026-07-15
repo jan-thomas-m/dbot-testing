@@ -19,7 +19,7 @@ check-jsonschema>=0.37.3
 
 ### 1. Without any grouping
 
-`.github/dependabot.yml`
+[`.github/dependabot.yml`](dbot-files/dependabot-test-1.yml)
 
 ```yaml
 ---
@@ -36,13 +36,13 @@ updates:
       - "python"
 ```
 
-PRs
+PRs:
 
-Update pytest requirement from >=7.0.0 to >=9.1.1
-Update ruff requirement from >=0.15.17 to >=0.15.21
-Update check-jsonschema requirement from >=0.37.3 to >=0.37.4
+1. Update pytest requirement from >=7.0.0 to >=9.1.1
+2. Update bandit requirement from >=1.7.0 to >=1.9.4
+3. Update ruff requirement from >=0.15.17 to >=0.15.21
 
-### Group all minor+patch
+### Group all minor+patch
 
 `.github/dependabot.yml`
 
