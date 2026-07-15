@@ -1,0 +1,10 @@
+# All these are old versions
+
+# major update
+pytest>=7.0.0
+
+# minor update
+bandit>=1.7.0
+
+# patch update
+ruff>=0.15.17
