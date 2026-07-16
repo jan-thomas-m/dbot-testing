@@ -24,3 +24,55 @@ updates:
     #       update-types:
     #         - "version-update:semver-major"
           # grouped: false
+
+
+  - package-ecosystem: "terraform"
+    directories:
+      - "/terraform"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 3
+    target-branch: main
+    labels:
+      - "dependencies"
+      - "terraform"
+    groups:
+      tf-version:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      tf-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 3
+    target-branch: "main"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    groups:
+      gha-version:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      gha-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

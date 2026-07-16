@@ -1,0 +1,9 @@
+# Terraform
+
+ Compiled state.
+*.tfstate
+*.tfstate.backup
+
+# Module directory.
+.terraform/
+local_mirror/
