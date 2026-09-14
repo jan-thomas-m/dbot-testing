@@ -5,6 +5,12 @@ Goal: To have dependabot configured to bundle minor and patch updates into same 
 
 TLDR; Seems impossible to group minor + patch updates into 1 PR, and at the same time allow major updates as separate PRs. (at least as per Jul 14, 2026)
 
+## Repo links
+
+- [dependabot.yml](.github/dependabot.yml)
+- [Dependency graph](/network/updates)
+- [Actions](/actions)
+
 ## Baseline config (for forcing updates)
 
 `requirements.txt`
