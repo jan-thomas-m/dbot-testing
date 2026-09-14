@@ -10,6 +10,8 @@ multi-ecosystem-groups:
       # interval: "weekly"
       interval: "daily"
     # labels: ["infrastructure", "dependencies"]
+    open-pull-requests-limit: 3
+    target-branch: "main"
 
 
 
@@ -18,8 +20,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 5
-    target-branch: "main"
     labels:
       - "dependencies"
       - "python"
@@ -47,8 +47,6 @@ updates:
       - "/terraform"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 3
-    target-branch: main
     labels:
       - "dependencies"
       - "terraform"
@@ -77,8 +75,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 3
-    target-branch: "main"
     labels:
       - "dependencies"
       - "github-actions"
