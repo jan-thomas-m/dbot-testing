@@ -8,3 +8,9 @@ bandit>=1.7.0
 
 # patch update
 ruff>=0.15.17
+
+# Severity: High
+urllib<2.6.0
+
+# Severity: Moderate
+Jinja2<3.1.0

@@ -1,5 +1,18 @@
 ---
 version: 2
+
+# https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
+# https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-multi-ecosystem-updates
+#
+multi-ecosystem-groups:
+  infrastructure:
+    schedule:
+      # interval: "weekly"
+      interval: "daily"
+    # labels: ["infrastructure", "dependencies"]
+
+
+
 updates:
   - package-ecosystem: "pip"
     directory: "/"
@@ -10,6 +23,7 @@ updates:
     labels:
       - "dependencies"
       - "python"
+    multi-ecosystem-group: "infrastructure"
     # groups:
     #   minor-and-patch:
     #     applies-to: version-updates
@@ -36,21 +50,24 @@ updates:
     labels:
       - "dependencies"
       - "terraform"
-    groups:
-      tf-version:
-        applies-to: version-updates
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
-      tf-security:
-        applies-to: security-updates
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
+    multi-ecosystem-group: "infrastructure"
+    # groups:
+    #   tf-version:
+    #     applies-to: version-updates
+    #     patterns:
+    #       - "*"
+    #     update-types:
+    #       - "minor"
+    #       - "patch"
+    #   tf-security:
+    #     applies-to: security-updates
+    #     patterns:
+    #       - "*"
+    #       # - "aws"
+    #       # - "terraform-*"
+    #     update-types:
+    #       - "minor"
+    #       - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -61,18 +78,19 @@ updates:
     labels:
       - "dependencies"
       - "github-actions"
-    groups:
-      gha-version:
-        applies-to: version-updates
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
-      gha-security:
-        applies-to: security-updates
-        patterns:
-          - "*"
-        update-types:
-          - "minor"
-          - "patch"
+    multi-ecosystem-group: "infrastructure"
+    # groups:
+    #   gha-version:
+    #     applies-to: version-updates
+    #     patterns:
+    #       - "*"
+    #     update-types:
+    #       - "minor"
+    #       - "patch"
+    #   gha-security:
+    #     applies-to: security-updates
+    #     patterns:
+    #       - "*"
+    #     update-types:
+    #       - "minor"
+    #       - "patch"
