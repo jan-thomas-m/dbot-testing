@@ -24,6 +24,8 @@ updates:
       - "dependencies"
       - "python"
     multi-ecosystem-group: "infrastructure"
+    patterns:
+      - "*"
     # groups:
     #   minor-and-patch:
     #     applies-to: version-updates
@@ -51,6 +53,8 @@ updates:
       - "dependencies"
       - "terraform"
     multi-ecosystem-group: "infrastructure"
+    patterns:
+      - "*"
     # groups:
     #   tf-version:
     #     applies-to: version-updates
@@ -79,6 +83,8 @@ updates:
       - "dependencies"
       - "github-actions"
     multi-ecosystem-group: "infrastructure"
+    patterns:
+      - "*"
     # groups:
     #   gha-version:
     #     applies-to: version-updates
