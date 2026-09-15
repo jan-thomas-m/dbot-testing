@@ -8,7 +8,7 @@ terraform {
       # latest: 6.55.0, ..., 5.100.0, ..., 5.0.0, 4.67.0
       source  = "hashicorp/aws"
       # major, should upgrade to 6.55.0
-      version = "~> 5"
+      version = "~> 6"
     }
 
     archive = {
