@@ -86,13 +86,13 @@ updates:
     labels:
       - "dependencies"
       - "npm"
-    multi-ecosystem-group: "infrastructure"
-    patterns:
-      - "*"
-    # groups:
-    #   dependencies:
-    #     patterns:
-    #       - '*'
+    # multi-ecosystem-group: "infrastructure"
+    # patterns:
+    #   - "*"
+    groups:
+      npm:
+        patterns:
+          - '*'
 
   - package-ecosystem: "github-actions"
     directory: "/"
