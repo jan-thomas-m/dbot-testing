@@ -26,10 +26,13 @@ updates:
     labels:
       - "dependencies"
       - "python"
-    multi-ecosystem-group: "infrastructure"
-    patterns:
-      - "*"
-    # groups:
+    # multi-ecosystem-group: "infrastructure"
+    # patterns:
+    #   - "*"
+    groups:
+      pypkg:
+        patterns:
+          - "*"
     #   minor-and-patch:
     #     applies-to: version-updates
     #     patterns:
