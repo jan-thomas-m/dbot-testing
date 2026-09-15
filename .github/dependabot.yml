@@ -78,7 +78,7 @@ updates:
     #       - "patch"
 
   - package-ecosystem: npm
-    directory: /
+    directory: /devplatform
     schedule:
       interval: "daily"
     labels:
