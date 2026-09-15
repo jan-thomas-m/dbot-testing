@@ -1,5 +1,5 @@
-name: test
-run-name: A simple noop test
+name: test-git-workflow
+run-name: A simple git workflow noop test
 on:
   push:
   pull_request:

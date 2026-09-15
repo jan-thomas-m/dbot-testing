@@ -20,7 +20,7 @@ multi-ecosystem-groups:
 
 updates:
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/python"
     schedule:
       interval: "daily"
     labels:
@@ -95,7 +95,7 @@ updates:
           - '*'
 
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: "/.github"
     schedule:
       interval: "daily"
     labels:
