@@ -78,7 +78,9 @@ updates:
     #       - "patch"
 
   - package-ecosystem: npm
-    directory: /devplatform
+    directories:
+      - "/devplatform/devplatform"
+      - "/devplatform/sam-pipeline"
     schedule:
       interval: "daily"
     labels:
