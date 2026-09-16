@@ -104,13 +104,9 @@ updates:
     labels:
       - "dependencies"
       - "npm"
-    # multi-ecosystem-group: "infrastructure"
-    # patterns:
-    #   - "*"
-    groups:
-      npm:
-        patterns:
-          - '*'
+    multi-ecosystem-group: "infrastructure"
+    patterns:
+      - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/.github"
