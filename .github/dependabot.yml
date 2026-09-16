@@ -24,19 +24,21 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "fix"
-      prefix-development: "chore"
-      include: "scope"
+      prefix: "dbot/fix"
+      prefix-development: "dbot/chore"
+      include: "scope" # Append (deps) or (deps-dev) to prefix
+    # open-pull-requests-limit: 3
+    # target-branch: "main"
     labels:
       - "dependencies"
       - "python"
-    # multi-ecosystem-group: "infrastructure"
-    # patterns:
-    #   - "*"
-    groups:
-      pypkg:
-        patterns:
-          - "*"
+    multi-ecosystem-group: "infrastructure"
+    patterns:
+      - "*"
+    # groups:
+    #   pypkg:
+    #     patterns:
+    #       - "*"
     #   minor-and-patch:
     #     applies-to: version-updates
     #     patterns:
@@ -57,6 +59,10 @@ updates:
       - "/terraform"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "dbot/fix"
+      prefix-development: "dbot/chore"
+      include: "scope" # Append (deps) or (deps-dev) to prefix
     labels:
       - "dependencies"
       - "terraform"
@@ -87,6 +93,10 @@ updates:
       - "/devplatform/sam-pipeline"
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "dbot/fix"
+      prefix-development: "dbot/chore"
+      include: "scope" # Append (deps) or (deps-dev) to prefix
     labels:
       - "dependencies"
       - "npm"
