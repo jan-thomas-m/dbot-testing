@@ -7,6 +7,16 @@ version: 2
 # https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
 # https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/configuring-multi-ecosystem-updates
 #
+# Goal: bundle updates from ALL ecosystems into a SINGLE pull request.
+#
+# How it works:
+# - The group `infrastructure` owns the schedule and the PR-level settings
+#   (labels, commit-message, open-pull-requests-limit, target-branch).
+# - Each `updates` entry only declares its ecosystem, directory/directories,
+#   `patterns` (REQUIRED when using multi-ecosystem-group), and the
+#   `multi-ecosystem-group` name. Per-ecosystem `schedule` and `labels` are
+#   intentionally omitted: the group drives scheduling and PR metadata, so
+#   duplicating them per-ecosystem is redundant and can conflict.
 multi-ecosystem-groups:
   infrastructure:
     schedule:
@@ -20,116 +30,30 @@ multi-ecosystem-groups:
       prefix-development: "dbot/chore"
       include: "scope" # Append (deps) or (deps-dev) to prefix
 
-
-
 updates:
   - package-ecosystem: "pip"
     directory: "/python"
-    schedule:
-      interval: "daily"
-    # commit-message:
-    #   prefix: "dbot/fix"
-    #   prefix-development: "dbot/chore"
-    #   include: "scope" # Append (deps) or (deps-dev) to prefix
-    # open-pull-requests-limit: 3
-    # target-branch: "main"
-    labels:
-      - "dependencies"
-      - "python"
     multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
-    # groups:
-    #   pypkg:
-    #     patterns:
-    #       - "*"
-    #   minor-and-patch:
-    #     applies-to: version-updates
-    #     patterns:
-    #       - "*"
-    #     update-types:
-    #       # - "major"
-    #       - "minor"
-    #       - "patch"
-    # ignore:
-    #     - dependency-name: "*"
-    #       update-types:
-    #         - "version-update:semver-major"
-          # grouped: false
-
 
   - package-ecosystem: "terraform"
     directories:
       - "/terraform"
-    schedule:
-      interval: "daily"
-    # commit-message:
-    #   prefix: "dbot/fix"
-    #   prefix-development: "dbot/chore"
-    #   include: "scope" # Append (deps) or (deps-dev) to prefix
-    labels:
-      - "dependencies"
-      - "terraform"
     multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
-    # groups:
-    #   tf-version:
-    #     applies-to: version-updates
-    #     patterns:
-    #       - "*"
-    #     update-types:
-    #       - "minor"
-    #       - "patch"
-    #   tf-security:
-    #     applies-to: security-updates
-    #     patterns:
-    #       - "*"
-    #       # - "aws"
-    #       # - "terraform-*"
-    #     update-types:
-    #       - "minor"
-    #       - "patch"
 
-  - package-ecosystem: npm
+  - package-ecosystem: "npm"
     directories:
       - "/devplatform/devplatform"
       - "/devplatform/sam-pipeline"
-    schedule:
-      interval: "daily"
-    # commit-message:
-    #   prefix: "dbot/fix"
-    #   prefix-development: "dbot/chore"
-    #   include: "scope" # Append (deps) or (deps-dev) to prefix
-    labels:
-      - "dependencies"
-      - "npm"
     multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/.github"
-    schedule:
-      interval: "daily"
-    labels:
-      - "dependencies"
-      - "github-actions"
     multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
-    # groups:
-    #   gha-version:
-    #     applies-to: version-updates
-    #     patterns:
-    #       - "*"
-    #     update-types:
-    #       - "minor"
-    #       - "patch"
-    #   gha-security:
-    #     applies-to: security-updates
-    #     patterns:
-    #       - "*"
-    #     update-types:
-    #       - "minor"
-    #       - "patch"
