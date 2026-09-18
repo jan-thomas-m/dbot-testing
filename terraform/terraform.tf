@@ -16,7 +16,7 @@ terraform {
       # latest: 2.8.0, 2.7.1, 2.6.0, 2.5.0
       source  = "hashicorp/archive"
       # patch, should upgrade to 2.7.1
-      version = "~> 2.7.0"
+      version = "~> 2.8.1"
     }
 
     null = {

@@ -1,16 +1,16 @@
 # All these are old versions
 
 # major update
-pytest>=7.0.0
+pytest>=9.1.1
 
 # minor update
-bandit>=1.7.0
+bandit>=1.9.4
 
 # patch update
-ruff>=0.15.17
+ruff>=0.16.7
 
 # Severity: High
 urllib<2.6.0
 
 # Severity: Moderate
-Jinja2<3.1.0
+Jinja2<3.2.0
